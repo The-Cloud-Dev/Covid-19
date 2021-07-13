@@ -9,8 +9,8 @@
 </html>
 <script>
   fetch(url).then(function(response) {
-    response.text()
+    document.getElementById('output').innerHTML = response.text();
+    data = response.text()
+    console.log(data)
   });
-  var cases = text;
-  document.getElementById('output').innerHTML = cases;
   </script>
