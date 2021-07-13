@@ -8,7 +8,7 @@
     </body>
 </html>
 <script>
-  fetch(url).then(function(response) {
+  fetch('https://corona-api.com/timeline').then(function(response) {
     document.getElementById('output').innerHTML = response.text();
     data = response.text()
     console.log(data)
