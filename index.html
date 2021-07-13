@@ -8,9 +8,9 @@
     </body>
 </html>
 <script>
-  const fetch = require("node-fetch");
-  fetch('https://corona-api.com/timeline')
-     .then(response => response.json())
-     var cases = data;
-     document.getElementById('output').innerHTML = cases;
+  fetch(url).then(function(response) {
+    response.text()
+  });
+  var cases = text;
+  document.getElementById('output').innerHTML = cases;
   </script>
