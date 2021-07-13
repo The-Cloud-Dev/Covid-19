@@ -8,9 +8,8 @@
     </body>
 </html>
 <script>
-  fetch('https://corona-api.com/timeline').then(function(response) {
-    document.getElementById('output').innerHTML = response.text();
-    data = response.text()
+  fetch('https://corona-api.com/timeline');
+    .then(response => response.json());
     console.log(data)
-  });
-  </script>
+    document.getElementById('output').innerHTML = response.text();
+</script>
