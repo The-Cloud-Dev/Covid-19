@@ -8,6 +8,9 @@
     </body>
 </html>
 <script>
-    var cases = 12;
-    document.getElementById('output').innerHTML = cases;
+  const fetch = require("node-fetch");
+  fetch('https://corona-api.com/timeline')
+     .then(response => response.json())
+     var cases = data;
+     document.getElementById('output').innerHTML = cases;
   </script>
