@@ -8,5 +8,8 @@
     </body>
 </html>
 <script>
+  fetch('https://corona-api.com/timeline')
+  .then(response => response.json())
+  .then(data => console.log(data));
   document.getElementById('output').innerHTML = 'random textt';
 </script>
