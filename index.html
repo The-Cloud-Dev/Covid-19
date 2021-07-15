@@ -8,7 +8,7 @@
     </body>
 </html>
 <script>
-  fetch('https://corona-api.com/timeline');
-  .then(response => response.json());
+  fetch('http://example.com/movies.json')
+  .then(response => response.json())
   .then(data => document.getElementById('output').innerHTML = data));
  </script>
