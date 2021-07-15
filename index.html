@@ -11,7 +11,7 @@
   fetch('https://corona-api.com/timeline')
   .then(response => response.json())
   .then(data => {
-    console.log(data['data'][0])
+    console.log(data['data'][0]['confirmed'])
     document.getElementById('output').innerHTML = data
   }) ;
    </script>
