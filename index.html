@@ -4,7 +4,9 @@
     <title>Covid-19 Cases</title>
   </head>
   <body>
-    <p id="output"></p>
+    <div class="square">
+        <p id="output"></p>
+    </div>
     </body>
 </html>
 <script>
@@ -12,14 +14,16 @@
   .then(response => response.json())
   .then(data => {
     console.log(data['data'][0]['confirmed'])
-    document.getElementById('output').innerHTML = data['data'][0]['confirmed']
-  }) ;
+    document.getElementById('output').innerHTML = "Cases: "+ data['data'][0]['confirmed']
+  });
    </script>
 <style>
     * {
-        background-color: rgba(0, 0, 0, 0.589);
+        background-color: whitesmoke;
+        font-family: sans-serif;
     }
-  p {
-        color: white;
+    p  {
+        color: rgb(0, 0, 0);
     }
+    
 </style>
