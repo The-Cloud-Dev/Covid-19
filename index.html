@@ -10,5 +10,7 @@
 <script>
   fetch('https://corona-api.com/timeline')
   .then(response => response.json())
-  .then(data => document.getElementById('output').innerHTML = data);
+  .then(let jsondata => data);
+  document.getElementById('output').innerHTML = data
+  console.log(jsondata)
  </script>
