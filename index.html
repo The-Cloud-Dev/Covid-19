@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <link rel="shortcut icon" href="https://user-images.githubusercontent.com/85949157/125814389-62b5c3fa-c9e9-46b9-9ef1-0dd44f840e18.png" type="image/png">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
     <title>Covid-19 Cases</title>
-  </head>
-  <body>
-    <div class="square">
-        <p id="cases"></p>
-        <p id="active"></p>
-        <p id="recovered"></p>
-        <p id="deaths"></p>
-        <p id="last update"></p>
+    <div class="header">
+      <h1>Covid-19 Cases</h1>
     </div>
-    </body>
+    <br>
+  </head>
+
+  <body>
+    <div class="square"><br>
+      <p id="cases"></p><br>
+      <p id="active"></p><br>
+      <p id="recovered"></p><br>
+      <p id="deaths"></p><br>
+      </div>
+  </body>
+
 </html>
 <script>
   fetch('https://corona-api.com/timeline')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('cases').innerHTML = "Cases: "+ data['data'][0]['confirmed']
-    document.getElementById('active').innerHTML = "Active: "+ data['data'][0]['active']
-    document.getElementById('recovered').innerHTML = "Recovered: "+ data['data'][0]['recovered']
-    document.getElementById('deaths').innerHTML = "Deaths: "+ data['data'][0]['deaths']
-    document.getElementById('last update').innerHTML = "Last update: "+ data['data'][0]['updated_at']
-  });
-   </script>
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('cases').innerHTML = "Cases: " + data['data'][0]['confirmed']
+      document.getElementById('active').innerHTML = "Active: " + data['data'][0]['active']
+      document.getElementById('recovered').innerHTML = "Recovered: " + data['data'][0]['recovered']
+      document.getElementById('deaths').innerHTML = "Deaths: " + data['data'][0]['deaths']
+    });
+</script>
 <style>
-    * {
-        background-color: whitesmoke;
-        font-family: sans-serif;
-    }
-    p  {
-        color: rgb(0, 0, 0);
-    }
-    
+  * {
+    font-family: sans-serif;
+    margin: auto;
+  }
+
+  p {
+    color: black;
+    text-align: center;
+  }
+
+  .square {
+    height: 160px;
+    width: 500px;
+    background-color: grey;
+    position: relative;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
 </style>
