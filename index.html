@@ -21,13 +21,20 @@
 
 </html>
 <script>
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   fetch('https://corona-api.com/timeline')
     .then(response => response.json())
     .then(data => {
-      document.getElementById('cases').innerHTML = "Cases: " + data['data'][0]['confirmed']
-      document.getElementById('active').innerHTML = "Active: " + data['data'][0]['active']
-      document.getElementById('recovered').innerHTML = "Recovered: " + data['data'][0]['recovered']
-      document.getElementById('deaths').innerHTML = "Deaths: " + data['data'][0]['deaths']
+      var confirmed = numberWithCommas(data['data'][0]['confirmed'])
+      document.getElementById('cases').innerHTML = "Cases: " + confirmed
+      var active = numberWithCommas(data['data'][0]['active'])
+      document.getElementById('active').innerHTML = "Active: " + active
+      var recovered = numberWithCommas(data['data'][0]['recovered'])
+      document.getElementById('recovered').innerHTML = "Recovered: " + recovered
+      var deaths = numberWithCommas(data['data'][0]['deaths'])
+      document.getElementById('deaths').innerHTML = "Deaths: " + deaths
     });
 </script>
 <style>
