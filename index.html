@@ -1,69 +1,116 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link rel="shortcut icon" href="https://user-images.githubusercontent.com/85949157/125814389-62b5c3fa-c9e9-46b9-9ef1-0dd44f840e18.png" type="image/png">
-    <title>Covid-19 Cases</title>
-    <div class="header">
-      <h1>Covid-19 Cases</h1>
-    </div>
-    <br>
-  </head>
+    <head>
+        <link rel="shortcut icon"
+            href="https://user-images.githubusercontent.com/85949157/125814389-62b5c3fa-c9e9-46b9-9ef1-0dd44f840e18.png"
+            type="image/png">
+        <title>Covid-19 Cases</title>
+        <div class="header">
+            <h1>Covid-19 Cases</h1>
+        </div>
+        <br>
+    </head>
 
-  <body>
-    <div class="square"><br>
-      <p id="cases">Loading...</p><br>
-      <p id="active">Loading...</p><br>
-      <p id="recovered">Loading...</p><br>
-      <p id="deaths">Loading...</p><br>
+    <body>
+        <div class="square1"><br>
+            <h2 style="text-align: center;">Confirmed</h2><br>
+            <p id="cases">Loading...</p><br>
+        </div>
+        <div class="square2"><br>
+            <h2 style="text-align: center;">Active</h2><br>
+            <p id="active">Loading...</p><br>
+        </div>
+        <div class="square3"><br>
+            <h2 style="text-align: center;">Recovered</h2><br>
+            <p id="recovered">Loading...</p><br>
+        </div>
+        
+        <div class="square4"><br>
+          <h2 style="text-align: center;">Deaths</h2><br>
+          <p id="deaths">Loading...</p><br>
       </div>
-  </body>
+    </body>
 
 </html>
 <script>
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  fetch('https://corona-api.com/timeline')
-    .then(response => response.json())
-    .then(data => {
-      var confirmed = numberWithCommas(data['data'][0]['confirmed'])
-      document.getElementById('cases').innerHTML = "Cases: " + confirmed
-      var active = numberWithCommas(data['data'][0]['active'])
-      document.getElementById('active').innerHTML = "Active: " + active
-      var recovered = numberWithCommas(data['data'][0]['recovered'])
-      document.getElementById('recovered').innerHTML = "Recovered: " + recovered
-      var deaths = numberWithCommas(data['data'][0]['deaths'])
-      document.getElementById('deaths').innerHTML = "Deaths: " + deaths
-    });
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    fetch('https://corona-api.com/timeline')
+        .then(response => response.json())
+        .then(data => {
+            var confirmed = numberWithCommas(data['data'][0]['confirmed'])
+            document.getElementById('cases').innerHTML = confirmed
+            var active = numberWithCommas(data['data'][0]['active'])
+            document.getElementById('active').innerHTML = active
+            var recovered = numberWithCommas(data['data'][0]['recovered'])
+            document.getElementById('recovered').innerHTML = recovered
+            var deaths = numberWithCommas(data['data'][0]['deaths'])
+            document.getElementById('deaths').innerHTML = deaths
+        });
 </script>
 <style>
-  * {
-    font-family: sans-serif;
-    margin: auto;
-  }
+    * {
+        font-family: sans-serif;
+        margin: auto;
+    }
 
-  p {
-    color: black;
-    text-align: center;
-  }
+    p {
+        color: black;
+        text-align: center;
+    }
 
-  .square {
-    height: 160px;
-    width: 500px;
-    background-color: grey;
-    position: relative;
-    justify-content: center;
-    border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .square1 {
+        height: 160px;
+        width: 250px;
+        background-color: rgb(241, 239, 243);
+        position: relative;
+        justify-content: center;
+        border-radius: 25px;
+        margin-left: 30px;
+        float: left;
+    }
 
-  .header {
-    padding: 60px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-  }
+    .square2 {
+        height: 160px;
+        width: 250px;
+        background-color: rgb(241, 239, 243);
+        position: relative;
+        justify-content: center;
+        border-radius: 25px;
+        margin-left: 30px;
+        float: left;
+    }
+
+    .square3 {
+        height: 160px;
+        width: 250px;
+        background-color: rgb(241, 239, 243);
+        position: relative;
+        justify-content: center;
+        border-radius: 25px;
+        margin-left: 30px;
+        float: left;
+    }
+
+    .square4 {
+        height: 160px;
+        width: 250px;
+        background-color: rgb(241, 239, 243);
+        position: relative;
+        justify-content: center;
+        border-radius: 25px;
+        margin-left: 30px;
+        float: left;
+    }
+
+    
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
 </style>
