@@ -1,116 +1,144 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <link rel="shortcut icon"
-            href="https://user-images.githubusercontent.com/85949157/125814389-62b5c3fa-c9e9-46b9-9ef1-0dd44f840e18.png"
-            type="image/png">
-        <title>Covid-19 Cases</title>
-        <div class="header">
-            <h1>Covid-19 Cases</h1>
-        </div>
-        <br>
-    </head>
+  <head>
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <title>Covid-19 Cases</title>
+    <div class="header">
+      <h1>Covid-19 Cases</h1>
+    </div>
+    <br>
+  </head>
 
-    <body>
-        <div class="square1"><br>
-            <h2 style="text-align: center;">Confirmed</h2><br>
-            <p id="cases">Loading...</p><br>
-        </div>
-        <div class="square2"><br>
-            <h2 style="text-align: center;">Active</h2><br>
-            <p id="active">Loading...</p><br>
-        </div>
-        <div class="square3"><br>
-            <h2 style="text-align: center;">Recovered</h2><br>
-            <p id="recovered">Loading...</p><br>
-        </div>
-        
-        <div class="square4"><br>
-          <h2 style="text-align: center;">Deaths</h2><br>
-          <p id="deaths">Loading...</p><br>
-      </div>
-    </body>
+  <body>
+    <div class="square1"><br>
+      <h2 style="text-align: center;">Confirmed</h2><br>
+      <p id="cases">Loading...</p><br>
+    </div>
+    <div class="square2"><br>
+      <h2 style="text-align: center;">Active</h2><br>
+      <p id="active">Loading...</p><br>
+    </div>
+    <div class="square3"><br>
+      <h2 style="text-align: center;">Recovered</h2><br>
+      <p id="recovered">Loading...</p><br>
+    </div>
+
+    <div class="square4"><br>
+      <h2 style="text-align: center;">Deaths</h2><br>
+      <p id="deaths">Loading...</p><br>
+    </div>
+    <div class="navbar">
+      <a href="https://scratch.mit.edu/users/TheCloudDev/">Scratch</a>
+      <a href="https://github.com/The-Cloud-Dev">Github</a>
+      <a href="https://corona-api.com/timeline">Data Source</a>
+      <a href="/About me/about_me.html">About me</a>
+    </div>
+  </body>
 
 </html>
 <script>
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-    fetch('https://corona-api.com/timeline')
-        .then(response => response.json())
-        .then(data => {
-            var confirmed = numberWithCommas(data['data'][0]['confirmed'])
-            document.getElementById('cases').innerHTML = confirmed
-            var active = numberWithCommas(data['data'][0]['active'])
-            document.getElementById('active').innerHTML = active
-            var recovered = numberWithCommas(data['data'][0]['recovered'])
-            document.getElementById('recovered').innerHTML = recovered
-            var deaths = numberWithCommas(data['data'][0]['deaths'])
-            document.getElementById('deaths').innerHTML = deaths
-        });
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  fetch('https://corona-api.com/timeline')
+    .then(response => response.json())
+    .then(data => {
+      var confirmed = numberWithCommas(data['data'][0]['confirmed'])
+      document.getElementById('cases').innerHTML = confirmed
+      var active = numberWithCommas(data['data'][0]['active'])
+      document.getElementById('active').innerHTML = active
+      var recovered = numberWithCommas(data['data'][0]['recovered'])
+      document.getElementById('recovered').innerHTML = recovered
+      var deaths = numberWithCommas(data['data'][0]['deaths'])
+      document.getElementById('deaths').innerHTML = deaths
+    });
 </script>
 <style>
-    * {
-        font-family: sans-serif;
-        margin: auto;
-    }
+  * {
+    font-family: sans-serif;
+    margin: auto;
+  }
 
-    p {
-        color: black;
-        text-align: center;
-    }
+  p {
+    color: black;
+    text-align: center;
+  }
 
-    .square1 {
-        height: 160px;
-        width: 250px;
-        background-color: rgb(241, 239, 243);
-        position: relative;
-        justify-content: center;
-        border-radius: 25px;
-        margin-left: 30px;
-        float: left;
-    }
+  .square1 {
+    height: 160px;
+    width: 250px;
+    background-color: rgb(241, 239, 243);
+    position: relative;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 100px;
+    float: left;
+  }
 
-    .square2 {
-        height: 160px;
-        width: 250px;
-        background-color: rgb(241, 239, 243);
-        position: relative;
-        justify-content: center;
-        border-radius: 25px;
-        margin-left: 30px;
-        float: left;
-    }
+  .square2 {
+    height: 160px;
+    width: 250px;
+    background-color: rgb(241, 239, 243);
+    position: relative;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 30px;
+    float: left;
+  }
 
-    .square3 {
-        height: 160px;
-        width: 250px;
-        background-color: rgb(241, 239, 243);
-        position: relative;
-        justify-content: center;
-        border-radius: 25px;
-        margin-left: 30px;
-        float: left;
-    }
+  .square3 {
+    height: 160px;
+    width: 250px;
+    background-color: rgb(241, 239, 243);
+    position: relative;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 30px;
+    float: left;
+  }
 
-    .square4 {
-        height: 160px;
-        width: 250px;
-        background-color: rgb(241, 239, 243);
-        position: relative;
-        justify-content: center;
-        border-radius: 25px;
-        margin-left: 30px;
-        float: left;
-    }
+  .square4 {
+    height: 160px;
+    width: 250px;
+    background-color: rgb(241, 239, 243);
+    position: relative;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 30px;
+    float: left;
+  }
 
-    
-    .header {
-        padding: 60px;
-        text-align: center;
-        background: #1abc9c;
-        color: white;
-        font-size: 30px;
-    }
+
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+  }
+
+  .navbar {
+    background-color: #1abc9c;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 1;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 </style>
